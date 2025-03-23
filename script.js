@@ -56,7 +56,7 @@ document.getElementById("btnn").addEventListener("click", function () {
     if (Savedemail === email && Savedpassword === password) {
       // Redirect after 3 seconds
       setTimeout(function () {
-        window.location.replace("A.html");
+        window.location.replace("bank.html");
       }, 3000);
     }
   }
