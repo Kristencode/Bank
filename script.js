@@ -24,7 +24,7 @@ document.getElementById("btn").addEventListener("click", function () {
     empty.style.color = "Green";
 
     setTimeout(function () {
-      window.location.replace("login.html");
+      window.location.replace("");
     });
   } else {
     empty.innerText = "Fill all fields";
