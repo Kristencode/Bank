@@ -24,8 +24,8 @@ document.getElementById("btn").addEventListener("click", function () {
     empty.style.color = "Green";
 
     setTimeout(function () {
-      window.location.replace("");
-    });
+      window.location.replace("login.html");
+    }, 3000);
   } else {
     empty.innerText = "Fill all fields";
     empty.style.color = "red";
@@ -34,13 +34,13 @@ document.getElementById("btn").addEventListener("click", function () {
 
 // login function
 
-document.getElementById("btn").addEventListener("click", function () {
+document.getElementById("btnn").addEventListener("click", function () {
   let email = document.getElementById("email").value;
   let password = document.getElementById("password").value;
   let newp = document.getElementById("Newp");
 
-  Savedemail = localStorage.getItem("email");
-  Savedpassword = localStorage.getItem("password");
+  let Savedemail = localStorage.getItem("email");
+  let Savedpassword = localStorage.getItem("password");
 
   if (email === "" || password === "") {
     newp.innerText = "Email or password cant be empty!";
@@ -54,9 +54,10 @@ document.getElementById("btn").addEventListener("click", function () {
     return;
   } else {
     if (Savedemail === email && Savedpassword === password) {
+      // Redirect after 3 seconds
       setTimeout(function () {
-        window.location.replace("bank.html"), 3000;
-      });
+        window.location.replace("A.html");
+      }, 3000);
     }
   }
 });
