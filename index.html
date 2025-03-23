@@ -3,120 +3,88 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Register - Bank Account</title>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
+  <body class="bg-gray-100">
+    <div class="flex justify-center items-center min-h-screen">
+      <div class="bg-white p-6 rounded-lg shadow-md w-full sm:w-96">
+        <h1 class="text-2xl font-semibold text-center mb-6">Create Account</h1>
+        <p id="empty"></p>
 
-    <title>Document</title>
-  </head>
-  <body class="flex justify-center items-center h-screen w-screen">
-    <!-- creat a simple bank UI that has 1. create account number 2. send money 3. receive money 4. get a loan. -->
+        <form>
+          <!-- Full Name -->
+          <div class="mb-4">
+            <label for="full-name" class="block text-lg">Full Name</label>
+            <input
+              id="fName"
+              type="text"
+              name="full-name"
+              class="w-full mt-2 p-2 border border-gray-300 rounded"
+              placeholder="Enter your full name"
+            />
+          </div>
 
-    <div class=" h-screen w-screen p-2  border-black">
-      <!-- user heading -->
+          <!-- Email Address -->
+          <div class="mb-4">
+            <label for="email" class="block text-lg">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="w-full mt-2 p-2 border border-gray-300 rounded"
+              placeholder="Enter your email"
+            />
+          </div>
 
-      <div class="flex gap-10 pt-2">
-       <svg class=" fill-orange-900 white w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z"/></svg>
-        <h1 class="text-orange-900  text-2xl  justify-center">  Welcome,Haruna! </h1>
-      </div>
+          <!-- Password -->
+          <div class="mb-4">
+            <label for="password" class="block text-lg"
+              >Password</label
+            >
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="w-full mt-2 p-2 border border-gray-300 rounded"
+              placeholder="Enter your password"
+            />
+          </div>
 
-      <div class=" mt-5 bg-orange-800 h-[100px] rounded-md flex flex-col justify-center items-center">
-        <h1 class="text-white text-2xl  mt-5 font-bold"> Balance</h1>
-      <div class=" text-gray-500 border-black font-bold h-[50px] text-2xl items-center bg-gray-50   flex justify-center  h-12 w-[350px] ">$27000</div>
-      </div>
+          <!-- Confirm Password -->
+          <div class="mb-6">
+            <label for="confirm-password" class="block text-lg"
+              >Confirm Password</label
+            >
+            <input
+              id="cPwd"
+              type="password"
+              name="confirm-password"
+              class="w-full mt-2 p-2 border border-gray-300 rounded"
+              placeholder="Confirm your password"
+            />
+          </div>
 
+          <!-- Submit Button -->
+          <button
+            id="btn"
+            type="button"
+            class="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
+          >
+            Create Account
+          </button>
+        </form>
 
-       <div class=" text-xl mt-5 gap-5 bg-gray-50 h-[200px] rounded-md flex justify-center items-center">
-        <p class=" text-white flex items-center justify-center p-6  font-bold w-[30px]  h-[30px] bg-orange-800 rounded-full"> 10%</p>
-
-      <div class=" font-bold text-xl  flex-col items-center mt- flex justify-center  h-12  ">
-        <p class="text-gray-500">Monthly Transfer Limit</p>
-        <p class="text-orange-900">$3000 of <span class="text-gray-500 text-2xl font-bold">$30,000</span></p></div>
-      </div>
-
-      <div class=" flex flex-col items-center justify-center ">
-
-       <input class=" mt-10 bg-gray-200 w-[200px] rounded-md flex p-1" type="text" placeholder="$amount">
-
-      
-        <button class="p-2 rounded-md bg-orange-800 text-white font-bold text-xl mt-5 w-[350px]" id="send_btn"> Send $$</button>
-
-    
-
-      </div>
-
-
-       <div class=" mt-3 text-gray-500"> 
-        <h1  class="text-xl text-gray-500">Transactions History</h1>
-      
-        <div class="gap-1 border-t-1 w- border-orange-600">
-          <div class="flex bg-gray-100">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#666666"><path d="M120-160v-640l760 320-760 320Zm80-120 474-200-474-200v140l240 60-240 60v140Zm0 0v-400 400Z"/></svg>
-            <p>Sent $500 to Christopher S.. <span>12:00 pm</span><p>
+        <!-- Login Redirect -->
+        <div class="mt-4 text-center">
+          <p class="text-sm">
+            Already have an account?
+            <a href="login.html" class="text-blue-500">Login</a>
+          </p>
         </div>
-        <div class="flex bg-gray-100 mt-1">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#666666"><path d="M120-160v-640l760 320-760 320Zm80-120 474-200-474-200v140l240 60-240 60v140Zm0 0v-400 400Z"/></svg>
-            <p>Sent $500 to Christopher S.. <span>12:00 pm</span><p>
       </div>
-
-      <div class="flex bg-gray-100 mt-1">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#666666"><path d="M120-160v-640l760 320-760 320Zm80-120 474-200-474-200v140l240 60-240 60v140Zm0 0v-400 400Z"/></svg>
-            <p>Sent $500 to Christopher S.. <span>12:00 pm</span><p>
-      </div>
-
-      <div class="flex bg-gray-100 mt-1">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#666666"><path d="M120-160v-640l760 320-760 320Zm80-120 474-200-474-200v140l240 60-240 60v140Zm0 0v-400 400Z"/></svg>
-            <p>Sent $500 to Christopher S.. <span>12:00 pm</span><p>
-      </div>
-      <div class="flex bg-gray-100 mt-1">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#666666"><path d="M120-160v-640l760 320-760 320Zm80-120 474-200-474-200v140l240 60-240 60v140Zm0 0v-400 400Z"/></svg>
-            <p>Sent $500 to Christopher S.. <span>12:00 pm</span><p>
-      </div>
-      <div class="flex bg-gray-100 mt-1 border-b-1 border-orange-600">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#666666"><path d="M120-160v-640l760 320-760 320Zm80-120 474-200-474-200v140l240 60-240 60v140Zm0 0v-400 400Z"/></svg>
-            <p>Sent $500 to Christopher S.. <span>12:00 pm</span><p>
-      </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.2.0/math.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
