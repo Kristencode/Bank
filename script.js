@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let loan = parseFloat(localStorage.getItem("loan")) || 0;
   updateUI();
 
-  // Deposit 
+  // Deposit
   depositBtn.addEventListener("click", function () {
     let amount = getAmount();
     if (amount > 0) {
@@ -114,8 +114,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-
-
 // registration begins here
 document.getElementById("btn").addEventListener("click", function () {
   // Get values from the input fields
@@ -143,7 +141,7 @@ document.getElementById("btn").addEventListener("click", function () {
     empty.style.color = "Green";
 
     setTimeout(function () {
-      window.location.replace("login.html");
+      window.location.replace("bank.html");
     }, 3000);
   } else {
     empty.innerText = "Fill all fields";
@@ -152,8 +150,9 @@ document.getElementById("btn").addEventListener("click", function () {
 });
 
 // // login function
+let loginBtn = document.querySelector("#loginBtn");
 
-document.getElementById("loginButton").addEventListener("click", function () {
+loginBtn.addEventListener("click", function () {
   let email = document.getElementById("email").value;
   let password = document.getElementById("password").value;
   let Newp = document.getElementById("Newp");
@@ -191,6 +190,6 @@ document.getElementById("loginButton").addEventListener("click", function () {
   Newp.style.color = "green";
 
   setTimeout(function () {
-    window.location.replace("bank.html");
+    window.location.href = "bank.html";
   }, 3000);
 });
