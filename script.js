@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let loan = parseFloat(localStorage.getItem("loan")) || 0;
   updateUI();
 
-  // Deposit Money
+  // Deposit 
   depositBtn.addEventListener("click", function () {
     let amount = getAmount();
     if (amount > 0) {
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
       updateUI();
       showMessage("Loan of $" + amount + " granted", "yellow");
     } else {
-      showMessage("You must repay existing loan first!", "red");
+      showMessage("repay existing loan first!", "red");
     }
   });
 
@@ -114,6 +114,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+
+
+// registration begins here
 document.getElementById("btn").addEventListener("click", function () {
   // Get values from the input fields
   let Fname = document.getElementById("fName").value;
@@ -148,43 +151,46 @@ document.getElementById("btn").addEventListener("click", function () {
   }
 });
 
-// register
+// // login function
 
-let userEmail = localStorage.getItem("loggedInUser");
-let user = JSON.parse(localStorage.getItem(userEmail));
+document.getElementById("loginButton").addEventListener("click", function () {
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+  let Newp = document.getElementById("Newp");
 
-document.getElementById("balance").innerText = user.balance;
-document.getElementById("loan").innerText = user.loan;
+  // retriev data stored in registration
+  let savedEmail = localStorage.getItem("email");
+  let savedPassword = localStorage.getItem("password");
 
-function updateUser() {
-  localStorage.setItem(userEmail, JSON.stringify(user));
-  document.getElementById("balance").innerText = user.balance;
-  document.getElementById("loan").innerText = user.loan;
-}
-
-document.getElementById("depositBtn").addEventListener("click", function () {
-  let amount = Number(document.getElementById("amount").value);
-  user.balance += amount;
-  updateUser();
-});
-
-document.getElementById("loanBtn").addEventListener("click", function () {
-  let amount = Number(document.getElementById("amount").value);
-  user.loan += amount;
-  user.balance += amount;
-  updateUser();
-});
-
-document.getElementById("repayBtn").addEventListener("click", function () {
-  let amount = Number(document.getElementById("amount").value);
-  if (user.loan >= amount) {
-    user.loan -= amount;
-    user.balance -= amount;
-    updateUser();
+  // Check if input are empty
+  if (!email || !password) {
+    Newp.innerText = "Please, input email/password!";
+    Newp.style.color = "red";
+    return;
   }
-});
 
-document.getElementById("logoutBtn").addEventListener("click", function () {
-  localStorage.removeItem("loggedInUser");
-  window.location.href = "login.html";
+  if (!savedEmail) {
+    Newp.innerText = "Account doesn't exist!";
+    Newp.style.color = "red";
+    return;
+  }
+
+  if (email !== savedEmail) {
+    Newp.innerText = "Account doesn't exist!";
+    Newp.style.color = "red";
+    return;
+  }
+
+  if (password !== savedPassword) {
+    Newp.innerText = "Incorrect password!";
+    Newp.style.color = "red";
+    return;
+  }
+
+  Newp.innerText = "Login successful!";
+  Newp.style.color = "green";
+
+  setTimeout(function () {
+    window.location.replace("bank.html");
+  }, 3000);
 });
