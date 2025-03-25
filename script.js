@@ -191,5 +191,5 @@ loginBtn.addEventListener("click", function () {
 
   setTimeout(function () {
     window.location.href = "bank.html";
-  }, 3000);
+  }, 1000);
 });
